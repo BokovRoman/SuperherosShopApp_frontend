@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from "@mui/material/Container";
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { Header } from "./components";
+import {  Login, Registration, Home, FullHero, AddHero } from "./pages";
+import { useEffect } from "react";
+import { fetchAuthMe, selectIsAuth } from "./redux/slices/auth";
 
 function App() {
+  const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
+
+  useEffect(() => {
+      dispatch(fetchAuthMe())
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Container maxWidth="lg">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/heroes/:id" element={<FullHero />} />
+          <Route path="/heroes/:id/edit" element={<AddHero />} />
+          <Route path="/add-hero" element={<AddHero />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
+        </Routes>
+      </Container>
+    </>
   );
 }
 

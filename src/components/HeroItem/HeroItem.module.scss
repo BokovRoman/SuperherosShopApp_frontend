@@ -1,0 +1,125 @@
+$blue: #3a4883;
+
+.root {
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    position: relative;
+
+    &:hover {
+        border: 1px solid $blue;
+        box-shadow: 0 0 0 1px $blue;
+
+        .editButtons {
+            opacity: 1;
+        }
+    }
+
+    &Full {
+        &:hover {
+            background-color: #fff;
+            border: 1px solid #dedede;
+            box-shadow: none;
+        }
+    }
+}
+
+.image {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+
+    &Full {
+        min-height: 300px;
+        height: 100%;
+    }
+}
+
+.container{
+    display: flex;
+}
+
+.HeroList {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 50px 50px;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text{
+    margin: 30px;
+    font-size: 24px;
+    color:#3a4883;
+}
+
+span{
+    margin: 8px;
+    font-size: 22px;
+    color: #3d5bd4;
+}
+
+.Link {
+    text-decoration: none;
+}
+
+
+.wrapper {
+    padding: 10px 20px 20px;
+}
+
+.content {
+    margin: 30px 0 50px;
+
+    p {
+        font-size: 22px;
+        line-height: 36px;
+    }
+}
+
+.indention {
+    padding-left: 40px;
+}
+
+.title {
+    font-size: 32px;
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        color: #000;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &Full {
+        font-size: 42px;
+        font-weight: 900;
+    }
+}
+
+
+.views {
+    font-size: 12px;
+    margin: 0;
+}
+
+.owner {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.editButtons {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+}
