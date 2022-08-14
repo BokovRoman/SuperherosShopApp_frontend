@@ -1,3 +1,7 @@
+With this app You are to be able to: Create, edit and remove a superhero! If User Log in in the app, it is possible creating, editing and removing. In other case the User can getting heroes. Registration function is also available, you can register your data and edit/add/delete heroes without limitation! You can also see the number of views of each hero and the author who created this hero!
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
